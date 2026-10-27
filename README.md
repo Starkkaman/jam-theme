@@ -4,7 +4,7 @@ Saul Bass inspired Home Assistant theme: ink and paper with ochre, red and teal;
 Jost for text and Londrina Solid for display type.
 
 - Dark mode **ink**: #141210 ground, paper (#ece2c9) text, ochre primary.
-- Light mode **paper**: #ece2c9 ground, ink text, red primary; header and sidebar stay ink.
+- Light mode **paper**: #ece2c9 ground, ink text, red primary (with ink text on it); header and sidebar stay ink.
 
 It also defines the `--jam-*` palette used by [Jam Cards](https://github.com/Starkkaman/jam-cards): ground and slab
 colours, the accent hues below, and the series palette `--jam-s1`..`--jam-s5`, which the theme also hands to Home
@@ -13,17 +13,17 @@ versions, but nothing in the theme draws a shadow any more.
 
 ## Accent hues and room colours
 Each room has its own hue; red is reserved for alerts. `--jam-on-fg` (#141210 in both modes) is the text colour on
-filled accents.
+filled accents: every fill hue carries ink text and reaches at least 4.5:1 against it in both modes.
 
 | Token | Dark (ink) | Light (paper) | Used for |
 |---|---|---|---|
 | `--jam-ochre` | #e5a31b | #d99410 | Living room |
-| `--jam-teal` | #22a39a | #14897f | Kitchen |
-| `--jam-blue` | #4a7be0 | #3563c9 | Master bedroom |
+| `--jam-teal` | #22a39a | #22a39a | Kitchen |
+| `--jam-blue` | #4a7be0 | #4a7be0 | Master bedroom |
 | `--jam-pink` | #e2658f | #d24f7c | Marissa |
-| `--jam-violet` | #9b6dd6 | #8657c4 | Music |
+| `--jam-violet` | #9b6dd6 | #9b6dd6 | Music |
 | `--jam-green` | #86a83a | #6d8f22 | Nerd room |
-| `--jam-red` | #d8432a | #c2361a | Alerts only |
+| `--jam-red` | #e0553b | #e0553b | Alerts only |
 | `--jam-on-fg` | #141210 | #141210 | Text on filled accents |
 
 Home Assistant's named colours are mapped to the same hues, so tile and button cards that pick a colour by name match
