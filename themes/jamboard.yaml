@@ -43,6 +43,70 @@ JamBoard:
   ha-card-header-font-family: '"Londrina Solid", "Arial Black", Impact, sans-serif'
   jam-display: '"Londrina Solid", "Arial Black", Impact, sans-serif'
   jam-body: '"Jost", "Helvetica Neue", Arial, sans-serif'
+  # ---- dashboard view tabs in the app header (needs card-mod 4.x, HACS "lovelace-card-mod") ----
+  # card-mod reads these two keys from the top level of the theme, so both modes share them; without card-mod they do
+  # nothing. HA 2026.10 (frontend 20260930.x): hui-root's shadow root holds div.toolbar > ha-tab-group >
+  # ha-tab-group-tab[data-path=<view path or index>][active]; the label sits in the tab's ::part(base).
+  # In edit mode HA moves the tabs into div.tab-bar, which these rules leave alone.
+  # Room hues apply only on the Jam Home dashboard, recognised by its tab set (a group holding both the living and
+  # marissa tabs, via :has()); every other dashboard keeps the ochre default. Undo: delete both card-mod-* keys.
+  card-mod-theme: "JamBoard"
+  card-mod-root: |
+    .toolbar > ha-tab-group {
+      --ha-tab-indicator-color: transparent;
+      --ha-tab-track-color: transparent;
+    }
+    .toolbar > ha-tab-group::part(base) {
+      height: 100%;
+      justify-content: flex-end;
+    }
+    .toolbar > ha-tab-group::part(tabs) {
+      align-items: flex-end;
+      gap: 4px;
+      border-bottom: 0;
+    }
+    .toolbar > ha-tab-group > ha-tab-group-tab {
+      --jam-tab-c: var(--jam-ochre, #e5a31b);
+      height: 48px;
+      margin: 0;
+      border: 0;
+      opacity: 1;
+      font-family: var(--jam-display, "Londrina Solid", "Arial Black", Impact, sans-serif);
+      font-size: 1.125rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .toolbar > ha-tab-group > ha-tab-group-tab::part(base) {
+      box-sizing: border-box;
+      height: 100%;
+      padding: 0 16px;
+      line-height: 1;
+      color: var(--app-header-text-color, #ece2c9);
+      background: transparent;
+      border-bottom: 4px solid var(--jam-tab-c);
+      clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+      transition: none;
+    }
+    .narrow .toolbar > ha-tab-group > ha-tab-group-tab::part(base) {
+      padding: 0 12px;
+    }
+    .toolbar > ha-tab-group > ha-tab-group-tab[active]::part(base) {
+      color: var(--jam-on-fg, #141210);
+      background: var(--jam-tab-c);
+    }
+    .toolbar > ha-tab-group:has(> [data-path="living"]):has(> [data-path="marissa"]) > [data-path="kitchen"] {
+      --jam-tab-c: var(--jam-teal, #22a39a);
+    }
+    .toolbar > ha-tab-group:has(> [data-path="living"]):has(> [data-path="marissa"]) > [data-path="master"] {
+      --jam-tab-c: var(--jam-blue, #4a7be0);
+    }
+    .toolbar > ha-tab-group:has(> [data-path="living"]):has(> [data-path="marissa"]) > [data-path="marissa"] {
+      --jam-tab-c: var(--jam-pink, #e2658f);
+    }
+    .toolbar > ha-tab-group:has(> [data-path="living"]):has(> [data-path="marissa"]) > [data-path="music"] {
+      --jam-tab-c: var(--jam-violet, #9b6dd6);
+    }
 
   modes:
     dark:

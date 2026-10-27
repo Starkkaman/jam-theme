@@ -42,6 +42,21 @@ features, pictures and menus; display font on card headers; ink/paper surfaces f
 switches, gauge severity (green/yellow/red become teal/ochre/red), named colours (see above), weather icons, graph series,
 sidebar and app header.
 
+## Dashboard view tabs (needs card-mod)
+With [card-mod](https://github.com/thomasloven/lovelace-card-mod) 4.x installed (HACS "lovelace-card-mod", loaded as a
+Lovelace resource), the theme restyles Home Assistant's own view tabs in the app header to match the Jam Tabs card:
+Londrina Solid uppercase labels, 48px tall tabs, a 4px bar in the room colour under each tab, the current tab filled
+with its room colour and ink text, flat with one 8px cut corner (top right). On the Jam Home dashboard (views
+`living`, `kitchen`, `master`, `marissa`, `music`) each tab takes its room hue; tabs on every other dashboard use ochre.
+Edit mode keeps Home Assistant's own tab bar. Without card-mod nothing changes.
+
+It works through two theme-level keys, shared by both modes: `card-mod-theme: "JamBoard"` and `card-mod-root` (CSS
+that card-mod puts into the dashboard root). To undo it, delete both `card-mod-*` keys and run `frontend.reload_themes`.
+The rules target Home Assistant 2026.10's tab markup (`ha-tab-group` / `ha-tab-group-tab[data-path]`); a later
+frontend release that renames those elements makes them stop matching, and the tabs fall back to Home Assistant's look.
+The Jam Home room hues use CSS `:has()` (Chrome/WebView 105+, Safari 15.4+, Firefox 121+); older browsers show
+ochre tabs.
+
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
 `frontend.reload_themes` action and pick **JamBoard** in your profile (or set it as the default theme).
