@@ -9,7 +9,8 @@ Jost for text and Londrina Solid for display type.
 It also defines the `--jam-*` palette used by [Jam Cards](https://github.com/Starkkaman/jam-cards): ground and slab
 colours, the accent hues below, and the series palette `--jam-s1`..`--jam-s5`, which the theme also hands to Home
 Assistant's history and statistics graphs (`graph-color-1`..`5`). `--jam-shadow` is still defined for older Jam Cards
-versions, but nothing in the theme draws a shadow any more.
+versions, but nothing in the theme draws a shadow any more. `--jam-slab3` (#35302a dark, #ddd1b3 light) is the
+third surface step: Jam Cards 0.3 use it for inner controls of cards that sit inside a pop-up sheet.
 
 ## Accent hues and room colours
 Each room has its own hue; red is reserved for alerts. `--jam-on-fg` (#141210 in both modes) is the text colour on
