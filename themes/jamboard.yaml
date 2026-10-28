@@ -7,6 +7,7 @@
 # 2026-10-26). Graphs use jam-s1..s5 (graph-color-1..5); HA's own palette takes over from the 6th series.
 # Room hues: jam-ochre living, jam-teal kitchen, jam-blue master, jam-pink marissa, jam-violet music, jam-green nerd;
 # jam-red is for alerts only. jam-on-fg = text on filled accents. HA's named colours (blue-color etc.) map to these hues.
+# jam-alert-text = red text (bad values, "unavailable", "N/A"): a text-safe red, >= 4.5:1 on slab/slab2/slab3 in its mode.
 # No shadows anywhere in HA's UI; jam-shadow stays defined for older Jam Cards but the theme no longer uses it.
 JamBoard:
   # ---- shape + type (both modes) ----
@@ -123,6 +124,7 @@ JamBoard:
       jam-line: "#34302a"
       jam-ochre: "#e5a31b"
       jam-red: "#e0553b"
+      jam-alert-text: "#ff8a6e"
       jam-teal: "#22a39a"
       jam-blue: "#4a7be0"
       jam-pink: "#e2658f"
@@ -267,6 +269,7 @@ JamBoard:
       jam-line: "#d3c7a8"
       jam-ochre: "#d99410"
       jam-red: "#e0553b"
+      jam-alert-text: "#a12a14"
       jam-teal: "#22a39a"
       jam-blue: "#4a7be0"
       jam-pink: "#d24f7c"

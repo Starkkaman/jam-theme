@@ -24,7 +24,8 @@ filled accents: every fill hue carries ink text and reaches at least 4.5:1 again
 | `--jam-pink` | #e2658f | #d24f7c | Marissa |
 | `--jam-violet` | #9b6dd6 | #9b6dd6 | Music |
 | `--jam-green` | #86a83a | #6d8f22 | Nerd room |
-| `--jam-red` | #e0553b | #e0553b | Alerts only |
+| `--jam-red` | #e0553b | #e0553b | Alerts only (fills: power keys, alert chips) |
+| `--jam-alert-text` | #ff8a6e | #a12a14 | Red text (bad values, "unavailable", "N/A"), >= 4.5:1 on slab/slab2/slab3 |
 | `--jam-on-fg` | #141210 | #141210 | Text on filled accents |
 
 Home Assistant's named colours are mapped to the same hues, so tile and button cards that pick a colour by name match
