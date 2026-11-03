@@ -58,6 +58,13 @@ frontend release that renames those elements makes them stop matching, and the t
 The Jam Home room hues use CSS `:has()` (Chrome/WebView 105+, Safari 15.4+, Firefox 121+); older browsers show
 ochre tabs.
 
+## Generated file
+`themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
+[jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
+`tokens/ha.mjs` for the Home Assistant keys derived from the palette) by `node tools/themes.mjs` in jam-cards, with this
+repo cloned next to it. Do not edit the YAML by hand: change the token source and regenerate (`node tools/bundle.mjs
+--check` in jam-cards fails while the YAML is stale). Further looks will be written here as `themes/jamboard-<look>.yaml`.
+
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
 `frontend.reload_themes` action and pick **JamBoard** in your profile (or set it as the default theme).
