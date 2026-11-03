@@ -45,6 +45,7 @@ JamBoard:
   ha-card-header-font-family: '"Londrina Solid", "Arial Black", Impact, sans-serif'
   jam-display: '"Londrina Solid", "Arial Black", Impact, sans-serif'
   jam-body: '"Jost", "Helvetica Neue", Arial, sans-serif'
+  jam-look: "poster"
   # ---- dashboard view tabs in the app header (needs card-mod 4.x, HACS "lovelace-card-mod") ----
   # card-mod reads these two keys from the top level of the theme, so both modes share them; without card-mod they do
   # nothing. HA 2026.10 (frontend 20260930.x): hui-root's shadow root holds div.toolbar > ha-tab-group >
@@ -138,6 +139,17 @@ JamBoard:
       jam-s3: "#d43a1c"
       jam-s4: "#a66cc4"
       jam-s5: "#7f9b2a"
+      jam-ink-fg: "#ece2c9"
+      jam-ink-dim: "#9a8f7c"
+      jam-ink-dim2: "#b4a88f"
+      jam-band: "#141210"
+      jam-band-fg: "#ece2c9"
+      jam-band-dim: "#9a8f7c"
+      jam-band-key: "#36312b"
+      jam-band-off: "#6b6152"
+      jam-band-tile: "#2c2824"
+      jam-plate: "#141210"
+      jam-plate-fg: "#ece2c9"
       # Home Assistant
       primary-color: "#e5a31b"
       accent-color: "#e0553b"
@@ -283,6 +295,17 @@ JamBoard:
       jam-s3: "#c2361a"
       jam-s4: "#8a52ad"
       jam-s5: "#5f7d1c"
+      jam-ink-fg: "#ece2c9"
+      jam-ink-dim: "#9a8f7c"
+      jam-ink-dim2: "#b4a88f"
+      jam-band: "#141210"
+      jam-band-fg: "#ece2c9"
+      jam-band-dim: "#9a8f7c"
+      jam-band-key: "#36312b"
+      jam-band-off: "#6b6152"
+      jam-band-tile: "#2c2824"
+      jam-plate: "#141210"
+      jam-plate-fg: "#ece2c9"
       # Home Assistant
       primary-color: "#e0553b"
       accent-color: "#d99410"
