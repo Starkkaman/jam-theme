@@ -15,6 +15,10 @@ Since the Jam Cards theming work (after 0.7.2) the theme also sets `jam-look: po
 colours the cards used to hard-code: `jam-ink-fg` / `jam-ink-dim` / `jam-ink-dim2` (text on ink), `jam-band*` (the ink
 bands of the TV / speaker cards, the music dock and the error strip) and `jam-plate` / `jam-plate-fg` (label plates),
 the same in both modes. Shape tokens (`jam-shape-*`, `jam-radius-*`) are left to other looks: unset means the JamBoard cuts.
+Type tokens (theme top level): `jam-display-weight` (900), `jam-display-case` (uppercase), `jam-display-scale` and
+`jam-display-lead` (factors, 1), `jam-label-weight` / `jam-key-weight` (600), `jam-label-case` / `jam-key-case`
+(uppercase), `jam-label-track-scale` / `jam-key-track-scale` (factors, 1). The optional `jam-display-track`, `jam-num-font`
+and `jam-num-scale` are left to other looks.
 
 ## Accent hues and room colours
 Each room has its own hue; red is reserved for alerts. `--jam-on-fg` (#141210 in both modes) is the text colour on
