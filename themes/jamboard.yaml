@@ -55,6 +55,8 @@ JamBoard:
   jam-key-weight: "600"
   jam-key-case: "uppercase"
   jam-key-track-scale: "1"
+  jam-rule-h: "5px"
+  jam-stripe-w: "6px"
   jam-look: "poster"
   # ---- dashboard view tabs in the app header (needs card-mod 4.x, HACS "lovelace-card-mod") ----
   # card-mod reads these two keys from the top level of the theme, so both modes share them; without card-mod they do
