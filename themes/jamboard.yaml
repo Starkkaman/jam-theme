@@ -45,6 +45,16 @@ JamBoard:
   ha-card-header-font-family: '"Londrina Solid", "Arial Black", Impact, sans-serif'
   jam-display: '"Londrina Solid", "Arial Black", Impact, sans-serif'
   jam-body: '"Jost", "Helvetica Neue", Arial, sans-serif'
+  jam-display-weight: "900"
+  jam-display-case: "uppercase"
+  jam-display-lead: "1"
+  jam-display-scale: "1"
+  jam-label-weight: "600"
+  jam-label-case: "uppercase"
+  jam-label-track-scale: "1"
+  jam-key-weight: "600"
+  jam-key-case: "uppercase"
+  jam-key-track-scale: "1"
   jam-look: "poster"
   # ---- dashboard view tabs in the app header (needs card-mod 4.x, HACS "lovelace-card-mod") ----
   # card-mod reads these two keys from the top level of the theme, so both modes share them; without card-mod they do
