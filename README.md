@@ -19,7 +19,9 @@ Type tokens (theme top level): `jam-display-weight` (900), `jam-display-case` (u
 `jam-display-lead` (factors, 1), `jam-label-weight` / `jam-key-weight` (600), `jam-label-case` / `jam-key-case`
 (uppercase), `jam-label-track-scale` / `jam-key-track-scale` (factors, 1). The optional `jam-display-track`, `jam-num-font`
 and `jam-num-scale` are left to other looks. Lines: `jam-rule-h` (5px accent rule under titles) and `jam-stripe-w` (6px
-left tone stripe); `jam-border` (face border) and `jam-art-1`..`8` (idle-art colours) are left to other looks.
+left tone stripe); `jam-border` (face border) and `jam-art-1`..`8` (idle-art colours) are left to other looks. Motion: `jam-dur` (factor on
+every duration, 1), `jam-press-from` / `jam-press` (press transforms); `jam-ease-2/3/4` (timing) and `jam-kf-<name>`
+(keyframe names) are left to other looks.
 
 ## Accent hues and room colours
 Each room has its own hue; red is reserved for alerts. `--jam-on-fg` (#141210 in both modes) is the text colour on
