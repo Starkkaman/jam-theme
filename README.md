@@ -74,7 +74,13 @@ ochre tabs.
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
 `tokens/ha.mjs` for the Home Assistant keys derived from the palette) by `node tools/themes.mjs` in jam-cards, with this
 repo cloned next to it. Do not edit the YAML by hand: change the token source and regenerate (`node tools/bundle.mjs
---check` in jam-cards fails while the YAML is stale). Further looks will be written here as `themes/jamboard-<look>.yaml`.
+--check` in jam-cards fails while the YAML is stale). Further looks are written here as `themes/jamboard-<look>.yaml`:
+
+- `themes/jamboard-braun.yaml` = theme **Jam Braun** (from `tokens/looks/braun.mjs`): after Dieter Rams. Light mode warm
+  white (#e7e3da page, #f2efe8 panels, #262626 text), dark mode anthracite (#1c1c1a page, #2a2a27 panels); one orange
+  signal (#f07d1e / #f28a2e) as primary and accent of the cards; Archivo, mixed case; 14px radii, a hairline border and a
+  soft card shadow (`jam-elev-1`); `jam-look: braun` makes Jam Cards draw toggles, LED dots and the Braun motifs. No
+  card-mod view tab styling (HA's own tabs in the theme colours).
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
