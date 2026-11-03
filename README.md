@@ -69,12 +69,23 @@ frontend release that renames those elements makes them stop matching, and the t
 The Jam Home room hues use CSS `:has()` (Chrome/WebView 105+, Safari 15.4+, Firefox 121+); older browsers show
 ochre tabs.
 
+## Jam Olympia (second look)
+`themes/jamboard-olympia.yaml` adds the theme **Jam Olympia**, after Otl Aicher's Munich 1972 design: a light ground
+(#f4f6f7) with white faces and a 1px hairline (dark mode #10202b / #172b38), square corners, lowercase Albert Sans, and
+the Munich spectrum as flat fields and stripes (blue #3a8fd8, light blue #8fc7e8, green #2aa65c, yellow #f6c445, orange
+#f08c33, silver). There is no red: alerts are orange. The room hues map onto the spectrum (living orange, kitchen green,
+master blue, marissa light blue, music blue, nerd green); text on a filled hue is the deep navy #10202b. Home Assistant
+gets a white header and sidebar in light mode, a blue primary and 1px card borders. Jam Cards (with its `dist/fonts/`)
+draws the rest: top stripes, square power buttons, spectrum motifs. Pick **Jam Olympia** in your profile, or switch every
+browser on "Backend-selected" with `frontend.set_theme` (name `Jam Olympia`, and again with `mode: dark`).
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
 `tokens/ha.mjs` for the Home Assistant keys derived from the palette) by `node tools/themes.mjs` in jam-cards, with this
 repo cloned next to it. Do not edit the YAML by hand: change the token source and regenerate (`node tools/bundle.mjs
---check` in jam-cards fails while the YAML is stale). Further looks will be written here as `themes/jamboard-<look>.yaml`.
+--check` in jam-cards fails while the YAML is stale). Further looks are written here as `themes/jamboard-<look>.yaml` (`jamboard-olympia.yaml` from
+`tokens/looks/olympia.mjs`).
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
