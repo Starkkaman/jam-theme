@@ -136,6 +136,17 @@ jam-kiosk and jam-screensaver cards (solid panes, a dimmer static field). With c
 frosted pill for the current tab. Pick **Jam Glass** in your profile, or switch every browser on "Backend-selected" with
 `frontend.set_theme`.
 
+## Jam Girard
+`themes/jamboard-girard.yaml` adds the theme **Jam Girard**, after Alexander Girard's textiles for Herman Miller and La
+Fonda del Sol (1950s-60s): a bright cream-white page (#fbf6ec; dark: ink #2a1a12) with white (dark brown) cards, saturated
+flat room colours (vermilion living, mustard kitchen, cobalt master, pink marissa, magenta music, turquoise nerd), ink text,
+Fraunces for names and numbers and Work Sans for the rest. Home Assistant gets a white header and sidebar over a 6px
+vermilion band, a cobalt primary (dark: mustard) and pill badges. Jam Cards (with its `dist/fonts/`) draws the rest: a
+woven pattern edge or frame on every card (one pattern per room), pill keys tinted with the room colour, the sun / heart /
+eye / bird / diamond motifs, a sun-shaped power key and a kiosk in the room's own colour. With card-mod the view tabs become Work Sans pills over a 6px room
+band, the current tab filled with its colour. Pick **Jam Girard** in your profile, or switch every browser on
+"Backend-selected" with `frontend.set_theme`.
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
@@ -161,6 +172,7 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
 - `themes/jamboard-newwave.yaml` = theme **Jam New Wave** (from `tokens/looks/newwave.mjs`); see "Jam New Wave" above.
 - `themes/jamboard-brutal.yaml` = theme **Jam Brutal** (from `tokens/looks/brutal.mjs`); see "Jam Brutal" above.
 - `themes/jamboard-glass.yaml` = theme **Jam Glass** (from `tokens/looks/glass.mjs`); see "Jam Glass" above.
+- `themes/jamboard-girard.yaml` = theme **Jam Girard** (from `tokens/looks/girard.mjs`); see "Jam Girard" above.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
