@@ -79,7 +79,7 @@ gets a white header and sidebar in light mode, a blue primary and 1px card borde
 draws the rest: top stripes, square power buttons, spectrum motifs. Pick **Jam Olympia** in your profile, or switch every
 browser on "Backend-selected" with `frontend.set_theme` (name `Jam Olympia`, and again with `mode: dark`).
 
-## Jam Transit (third look)
+## Jam Transit
 `themes/jamboard-transit.yaml` adds the theme **Jam Transit**, after Massimo Vignelli and Unimark's New York City subway
 signage (1970) and map (1972): every Jam card is a black platform sign under a double rule (light mode: a white #ffffff
 page with black #000000 signs; dark mode: a black page with #111111 signs and a white rule), one Helvetica style sans
@@ -91,6 +91,16 @@ cards are white panels with a hairline in light mode (one text colour has to rea
 rule, the current one a white plate with black text. Jam Cards (with its `dist/fonts/`) draws the rest: the sign rules,
 route bullets with letters, round power bullets, the arrivals-board screensaver. Pick **Jam Transit** in your profile, or
 switch every browser on "Backend-selected" with `frontend.set_theme` (name `Jam Transit`, and again with `mode: dark`).
+
+## Jam Grid
+`themes/jamboard-grid.yaml` adds the theme **Jam Grid**, after Wim Crouwel's New Alphabet (1967) and his Stedelijk
+posters: a white page with a visible 1px grid every 24px (`lovelace-background`; dark mode: black with a #343434 grid),
+square faces with a 1px black line (white in dark), Hanken Grotesk in mixed case, and one orange-red signal (#e8401c /
+#ff4b26) for everything that is on, active or alerting; every room hue is that signal, text on it is black. A secondary
+blue (#1d3c9a / #6d8cf0) marks focus and selection. Home Assistant gets a white (black) header and sidebar with a 1px
+rule and 1px card borders. Jam Cards (with its `dist/fonts/`) draws the rest: big numbers built from grid cells,
+outlined square keys, brightness as a row of cells. Pick **Jam Grid** in your profile, or switch every browser on
+"Backend-selected" with `frontend.set_theme` (name `Jam Grid`, and again with `mode: dark`).
 
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
@@ -106,6 +116,7 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
   card-mod view tab styling (HA's own tabs in the theme colours).
 - `themes/jamboard-olympia.yaml` = theme **Jam Olympia** (from `tokens/looks/olympia.mjs`); see "Jam Olympia" above.
 - `themes/jamboard-transit.yaml` = theme **Jam Transit** (from `tokens/looks/transit.mjs`); see "Jam Transit" above.
+- `themes/jamboard-grid.yaml` = theme **Jam Grid** (from `tokens/looks/grid.mjs`); see "Jam Grid" above.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
