@@ -102,6 +102,17 @@ rule and 1px card borders. Jam Cards (with its `dist/fonts/`) draws the rest: bi
 outlined square keys, brightness as a row of cells. Pick **Jam Grid** in your profile, or switch every browser on
 "Backend-selected" with `frontend.set_theme` (name `Jam Grid`, and again with `mode: dark`).
 
+## Jam New Wave
+`themes/jamboard-newwave.yaml` adds the theme **Jam New Wave**, after April Greiman's Design Quarterly #133 (1986) with a
+touch of Memphis: a lavender-white page (#fbf8ff; dark #140f2e) with white / indigo planes tinted by their room (pastel
+peach, mint, lavender, pink), ink #1b1640 text, a sticker yellow (#fff05a) for alerts, Archivo 700 headings and Silkscreen
+pixel numbers and labels, 2px corners. Home Assistant gets a light header with an ink rule, a violet primary and soft card
+shadows. Jam Cards (with its `dist/fonts/`) draws the rest: tinted planes, confetti, stickers, pixel bars. The theme sets
+`jam-fx: 1`, so the cards also get translucent gradient planes, a slight tilt, blur behind sheets and a drifting light on
+the screensaver; on a weak wall tablet set `fx: false` on the jam-kiosk and jam-screensaver cards (flat planes, no tilt).
+With card-mod the view tabs become Silkscreen pixel caps with a room-colour underline and an ink block for the current
+tab. Pick **Jam New Wave** in your profile, or switch every browser on "Backend-selected" with `frontend.set_theme`.
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
@@ -124,6 +135,7 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
   wide-tracked uppercase labels, square corners, no shadows; `jam-look: pulsar` makes Jam Cards draw ridge lines instead
   of level bars, the 12-colour name codes and the Pulsar screensaver. Graph colours (`jam-s1`..`s5`) come from the
   12-colour wheel. With card-mod, the view tabs become tiny wide-tracked capitals with a 1px rule over the current one.
+- `themes/jamboard-newwave.yaml` = theme **Jam New Wave** (from `tokens/looks/newwave.mjs`); see "Jam New Wave" above.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
