@@ -124,6 +124,18 @@ switches, lit lights filled with their nearest room colour, fat bordered bars. W
 bordered pills, the current one filled with its room colour. Pick **Jam Brutal** in your profile, or switch every
 browser on "Backend-selected" with `frontend.set_theme`.
 
+## Jam Glass
+`themes/jamboard-glass.yaml` adds the theme **Jam Glass**: liquid glass + bento. Dark mode first: a deep ink page
+(#0b1020) under a soft colour field (teal #1fb5a8, violet #7c5cff, amber #ffb44d, as `lovelace-background`), frosted
+panes (#182036 solid), text #f4f6fb; light mode is an #eef1f7 page with a pastel field, white panes and #0f1424 text.
+Figtree in mixed case (600 names, light 300 big numbers), rounded bento shapes (28px cards, 18px keys, pills), a violet
+primary and soft card shadows in Home Assistant. Jam Cards (with its `dist/fonts/`) draws the panes, the light glow
+(a lit light glows from inside in its own colour) and the thick rounded sliders. The theme sets `jam-fx: 1`, so the
+cards are frosted (backdrop blur) and the colour field is at full strength; on a weak wall tablet set `fx: false` on the
+jam-kiosk and jam-screensaver cards (solid panes, a dimmer static field). With card-mod the view tabs become pills with a
+frosted pill for the current tab. Pick **Jam Glass** in your profile, or switch every browser on "Backend-selected" with
+`frontend.set_theme`.
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
@@ -148,6 +160,7 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
   12-colour wheel. With card-mod, the view tabs become tiny wide-tracked capitals with a 1px rule over the current one.
 - `themes/jamboard-newwave.yaml` = theme **Jam New Wave** (from `tokens/looks/newwave.mjs`); see "Jam New Wave" above.
 - `themes/jamboard-brutal.yaml` = theme **Jam Brutal** (from `tokens/looks/brutal.mjs`); see "Jam Brutal" above.
+- `themes/jamboard-glass.yaml` = theme **Jam Glass** (from `tokens/looks/glass.mjs`); see "Jam Glass" above.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
