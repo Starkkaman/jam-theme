@@ -79,6 +79,16 @@ gets a white header and sidebar in light mode, a blue primary and 1px card borde
 draws the rest: top stripes, square power buttons, spectrum motifs. Pick **Jam Olympia** in your profile, or switch every
 browser on "Backend-selected" with `frontend.set_theme` (name `Jam Olympia`, and again with `mode: dark`).
 
+## Jam Grid (third look)
+`themes/jamboard-grid.yaml` adds the theme **Jam Grid**, after Wim Crouwel's New Alphabet (1967) and his Stedelijk
+posters: a white page with a visible 1px grid every 24px (`lovelace-background`; dark mode: black with a #343434 grid),
+square faces with a 1px black line (white in dark), Hanken Grotesk in mixed case, and one orange-red signal (#e8401c /
+#ff4b26) for everything that is on, active or alerting; every room hue is that signal, text on it is black. A secondary
+blue (#1d3c9a / #6d8cf0) marks focus and selection. Home Assistant gets a white (black) header and sidebar with a 1px
+rule and 1px card borders. Jam Cards (with its `dist/fonts/`) draws the rest: big numbers built from grid cells,
+outlined square keys, brightness as a row of cells. Pick **Jam Grid** in your profile, or switch every browser on
+"Backend-selected" with `frontend.set_theme` (name `Jam Grid`, and again with `mode: dark`).
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
@@ -92,6 +102,7 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
   soft card shadow (`jam-elev-1`); `jam-look: braun` makes Jam Cards draw toggles, LED dots and the Braun motifs. No
   card-mod view tab styling (HA's own tabs in the theme colours).
 - `themes/jamboard-olympia.yaml` = theme **Jam Olympia** (from `tokens/looks/olympia.mjs`); see "Jam Olympia" above.
+- `themes/jamboard-grid.yaml` = theme **Jam Grid** (from `tokens/looks/grid.mjs`); see "Jam Grid" above.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
