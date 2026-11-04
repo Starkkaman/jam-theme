@@ -113,6 +113,17 @@ the screensaver; on a weak wall tablet set `fx: false` on the jam-kiosk and jam-
 With card-mod the view tabs become Silkscreen pixel caps with a room-colour underline and an ink block for the current
 tab. Pick **Jam New Wave** in your profile, or switch every browser on "Backend-selected" with `frontend.set_theme`.
 
+## Jam Brutal
+`themes/jamboard-brutal.yaml` adds the theme **Jam Brutal**, neo-brutalism: a paper page (#fffbea; dark #191919) with
+white cards (#262626 in dark) that carry a 3px black border (#f5f5f5 in dark) and a hard `6px 6px 0` offset shadow, six
+flat saturated room fills with black text (yellow living, lime kitchen, cyan master, pink Marissa, violet music, orange
+nerd; red alerts), Bricolage Grotesque 800 for names and numbers, mixed case, 10px corners and 999px pills. Home
+Assistant gets a paper header and sidebar with a 3px black rule, a violet primary, and its own cards with the same
+border and hard shadow. Jam Cards (with its `dist/fonts/`) draws the rest: keys that go down when pressed, pill
+switches, lit lights filled with their nearest room colour, fat bordered bars. With card-mod the view tabs become
+bordered pills, the current one filled with its room colour. Pick **Jam Brutal** in your profile, or switch every
+browser on "Backend-selected" with `frontend.set_theme`.
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
@@ -136,6 +147,7 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
   of level bars, the 12-colour name codes and the Pulsar screensaver. Graph colours (`jam-s1`..`s5`) come from the
   12-colour wheel. With card-mod, the view tabs become tiny wide-tracked capitals with a 1px rule over the current one.
 - `themes/jamboard-newwave.yaml` = theme **Jam New Wave** (from `tokens/looks/newwave.mjs`); see "Jam New Wave" above.
+- `themes/jamboard-brutal.yaml` = theme **Jam Brutal** (from `tokens/looks/brutal.mjs`); see "Jam Brutal" above.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
