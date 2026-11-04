@@ -92,6 +92,13 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
   soft card shadow (`jam-elev-1`); `jam-look: braun` makes Jam Cards draw toggles, LED dots and the Braun motifs. No
   card-mod view tab styling (HA's own tabs in the theme colours).
 - `themes/jamboard-olympia.yaml` = theme **Jam Olympia** (from `tokens/looks/olympia.mjs`); see "Jam Olympia" above.
+- `themes/jamboard-pulsar.yaml` = theme **Jam Pulsar** (from `tokens/looks/pulsar.mjs`): after Peter Saville / Factory
+  Records (Unknown Pleasures, Blue Monday). Dark mode (primary) is a black field with white text and 1px rules
+  (#3d3d3d), light mode cream #e7e2d2 with black text and black rules; one warm accent (#ffb070 dark, #c25f28 light,
+  black text on it) for "on" and "needs attention": every room hue and `jam-red` are the warm accent. Archivo 300 values,
+  wide-tracked uppercase labels, square corners, no shadows; `jam-look: pulsar` makes Jam Cards draw ridge lines instead
+  of level bars, the 12-colour name codes and the Pulsar screensaver. Graph colours (`jam-s1`..`s5`) come from the
+  12-colour wheel. With card-mod, the view tabs become tiny wide-tracked capitals with a 1px rule over the current one.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
