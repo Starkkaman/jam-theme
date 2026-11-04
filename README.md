@@ -119,8 +119,8 @@ Fonda del Sol (1950s-60s): a bright cream-white page (#fbf6ec; dark: ink #2a1a12
 flat room colours (vermilion living, mustard kitchen, cobalt master, pink marissa, magenta music, turquoise nerd), ink text,
 Fraunces for names and numbers and Work Sans for the rest. Home Assistant gets a white header and sidebar over a 6px
 vermilion band, a cobalt primary (dark: mustard) and pill badges. Jam Cards (with its `dist/fonts/`) draws the rest: a
-woven 6px pattern border inside every card (one pattern per room), pill keys tinted with the room colour, the sun / heart /
-eye / bird / diamond motifs and a sun-shaped power key. With card-mod the view tabs become Work Sans pills over a 6px room
+woven pattern edge or frame on every card (one pattern per room), pill keys tinted with the room colour, the sun / heart /
+eye / bird / diamond motifs, a sun-shaped power key and a kiosk in the room's own colour. With card-mod the view tabs become Work Sans pills over a 6px room
 band, the current tab filled with its colour. Pick **Jam Girard** in your profile, or switch every browser on
 "Backend-selected" with `frontend.set_theme`.
 
