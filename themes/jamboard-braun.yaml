@@ -4,7 +4,8 @@
 # loads Archivo (dist/fonts/) and draws the Braun controls (its look pack, --jam-look: braun). Without Jam Cards the
 # stacks fall back to Helvetica/Arial.
 # Light mode = warm white (#e7e3da page, #f2efe8 panels); dark mode = anthracite (#1c1c1a page, #2a2a27 panels).
-# Room hues show only as small dots or 2px rules; jam-ochre is the orange signal (accent, focus, primary).
+# jam-ochre is the orange signal (accent, focus, primary); Jam Cards adds ET66 yellow keys, olive on-toggles, light-colour
+# and room-colour tints over the panels (revision 2026-11-03).
 Jam Braun:
   # ---- shape + type (both modes) ----
   ha-card-border-radius: "14px"
