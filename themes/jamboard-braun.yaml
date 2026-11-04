@@ -4,8 +4,9 @@
 # loads Archivo (dist/fonts/) and draws the Braun controls (its look pack, --jam-look: braun). Without Jam Cards the
 # stacks fall back to Helvetica/Arial.
 # Light mode = warm white (#e7e3da page, #f2efe8 panels); dark mode = anthracite (#1c1c1a page, #2a2a27 panels).
-# jam-ochre is the orange signal (accent, focus, primary); Jam Cards adds ET66 yellow keys, olive on-toggles, light-colour
-# and room-colour tints over the panels (revision 2026-11-03).
+# jam-ochre is the orange signal (accent, focus, primary); jam-living is walnut (the SK4's wood), so the living room
+# is not the signal. Jam Cards adds ET66 yellow keys, olive on-toggles, light-colour and room-colour tints over the
+# panels (revision 2026-11-03).
 Jam Braun:
   # ---- shape + type (both modes) ----
   ha-card-border-radius: "14px"
@@ -106,6 +107,7 @@ Jam Braun:
       jam-dim: "#605c54"
       jam-line: "#d6d1c6"
       jam-ochre: "#f07d1e"
+      jam-living: "#8a5a3b"
       jam-red: "#d9482b"
       jam-alert-text: "#b32205"
       jam-teal: "#22a39a"
@@ -264,6 +266,7 @@ Jam Braun:
       jam-dim: "#aca89f"
       jam-line: "#3d3d38"
       jam-ochre: "#f28a2e"
+      jam-living: "#b07a52"
       jam-red: "#e5583a"
       jam-alert-text: "#ff8668"
       jam-teal: "#22a39a"
