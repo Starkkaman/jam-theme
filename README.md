@@ -79,6 +79,17 @@ gets a white header and sidebar in light mode, a blue primary and 1px card borde
 draws the rest: top stripes, square power buttons, spectrum motifs. Pick **Jam Olympia** in your profile, or switch every
 browser on "Backend-selected" with `frontend.set_theme` (name `Jam Olympia`, and again with `mode: dark`).
 
+## Jam New Wave (third look)
+`themes/jamboard-newwave.yaml` adds the theme **Jam New Wave**, after April Greiman's Design Quarterly #133 (1986) with a
+touch of Memphis: a lavender-white page (#fbf8ff; dark #140f2e) with white / indigo planes tinted by their room (pastel
+peach, mint, lavender, pink), ink #1b1640 text, a sticker yellow (#fff05a) for alerts, Archivo 700 headings and Silkscreen
+pixel numbers and labels, 2px corners. Home Assistant gets a light header with an ink rule, a violet primary and soft card
+shadows. Jam Cards (with its `dist/fonts/`) draws the rest: tinted planes, confetti, stickers, pixel bars. The theme sets
+`jam-fx: 1`, so the cards also get translucent gradient planes, a slight tilt, blur behind sheets and a drifting light on
+the screensaver; on a weak wall tablet set `fx: false` on the jam-kiosk and jam-screensaver cards (flat planes, no tilt).
+With card-mod the view tabs become Silkscreen pixel caps with a room-colour underline and an ink block for the current
+tab. Pick **Jam New Wave** in your profile, or switch every browser on "Backend-selected" with `frontend.set_theme`.
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
@@ -92,6 +103,7 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
   soft card shadow (`jam-elev-1`); `jam-look: braun` makes Jam Cards draw toggles, LED dots and the Braun motifs. No
   card-mod view tab styling (HA's own tabs in the theme colours).
 - `themes/jamboard-olympia.yaml` = theme **Jam Olympia** (from `tokens/looks/olympia.mjs`); see "Jam Olympia" above.
+- `themes/jamboard-newwave.yaml` = theme **Jam New Wave** (from `tokens/looks/newwave.mjs`); see "Jam New Wave" above.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
