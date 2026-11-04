@@ -79,6 +79,19 @@ gets a white header and sidebar in light mode, a blue primary and 1px card borde
 draws the rest: top stripes, square power buttons, spectrum motifs. Pick **Jam Olympia** in your profile, or switch every
 browser on "Backend-selected" with `frontend.set_theme` (name `Jam Olympia`, and again with `mode: dark`).
 
+## Jam Transit (third look)
+`themes/jamboard-transit.yaml` adds the theme **Jam Transit**, after Massimo Vignelli and Unimark's New York City subway
+signage (1970) and map (1972): every Jam card is a black platform sign under a double rule (light mode: a white #ffffff
+page with black #000000 signs; dark mode: a black page with #111111 signs and a white rule), one Helvetica style sans
+(Arimo, mixed case), square corners and round route bullets in the MTA colours (living orange #ff6319, kitchen green
+#00933c, master blue #0039a6, marissa and music purple #b933ad, nerd lime #6cbe45). Alerts are the yellow
+"service change" (#fccc0a, a diamond + text), never a red fill. Home Assistant gets a black header and sidebar; its own
+cards are white panels with a hairline in light mode (one text colour has to read on HA's cards and on its page) and
+#111111 in dark mode; primary blue (light) / #00add0 (dark). With card-mod the view tabs are Arimo labels over a 4px route
+rule, the current one a white plate with black text. Jam Cards (with its `dist/fonts/`) draws the rest: the sign rules,
+route bullets with letters, round power bullets, the arrivals-board screensaver. Pick **Jam Transit** in your profile, or
+switch every browser on "Backend-selected" with `frontend.set_theme` (name `Jam Transit`, and again with `mode: dark`).
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
@@ -92,6 +105,7 @@ repo cloned next to it. Do not edit the YAML by hand: change the token source an
   soft card shadow (`jam-elev-1`); `jam-look: braun` makes Jam Cards draw toggles, LED dots and the Braun motifs. No
   card-mod view tab styling (HA's own tabs in the theme colours).
 - `themes/jamboard-olympia.yaml` = theme **Jam Olympia** (from `tokens/looks/olympia.mjs`); see "Jam Olympia" above.
+- `themes/jamboard-transit.yaml` = theme **Jam Transit** (from `tokens/looks/transit.mjs`); see "Jam Transit" above.
 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
