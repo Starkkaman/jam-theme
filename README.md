@@ -147,6 +147,16 @@ eye / bird / diamond motifs, a sun-shaped power key and a kiosk in the room's ow
 band, the current tab filled with its colour. Pick **Jam Girard** in your profile, or switch every browser on
 "Backend-selected" with `frontend.set_theme`.
 
+## Jam Calm
+`themes/jamboard-calm.yaml` adds the theme **Jam Calm**, the calm-instrument look of Jam Design pass 6 + 7: Callsheet paper
+by day (#efebe2 page, #f9f7f2 cards, navy ink #19202e) and navy by night (#10141d page, #161c28 cards, cream ink #ece5d3),
+hairline edges and soft corners (16px cards, 22px dialogs), no shadows, Jost for words and IBM Plex Mono for labels and
+numbers. Orange (#ec7c22 / #f08a2c) is kept for the one thing to do now; Home Assistant's own switches and sliders take the
+house blue (#6780b4 / #5971a4). With card-mod the view tabs are plain Jost text with an ink underline on the current one.
+Jam Cards (with its `dist/fonts/`) draws the Calm cards: the light rocker or small switch beside a vertical fader, the small
+channel-reveal switch on plugs, fans and automations (its accent by kind), the purifier, media cards, the round 5 remote
+and a minimal kiosk. Pick **Jam Calm** in your profile, or pin it on a view (`theme: Jam Calm`).
+
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
 [jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
