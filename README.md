@@ -1,189 +1,78 @@
-# JamBoard theme
+# Hi-Fi theme (JamBoard)
 
-Saul Bass inspired Home Assistant theme: ink and paper with ochre, red and teal; no rounded corners, no shadows;
-Jost for text and Londrina Solid for display type.
+**Hi-Fi** is the Home Assistant theme of the Jam look: calm instruments (Jam Design pass 6 + 7). Callsheet paper by day,
+navy by night; Jost for words, IBM Plex Mono for small labels and numbers; flat panels with a hairline edge and soft
+corners (16px cards, 22px dialogs, 999px pills); no shadows, no glow. Orange is kept for the one thing to do now (at most one
+per screen) and red for alerts; state is colour + shape + word. Home Assistant's own switches, sliders and badges take the
+house blue, not the orange.
 
-- Dark mode **ink**: #141210 ground, paper (#ece2c9) text, ochre primary.
-- Light mode **paper**: #ece2c9 ground, ink text, red primary (with ink text on it); header and sidebar stay ink.
+It also defines the `--jam-*` palette that [Jam Cards](https://github.com/Starkkaman/jam-cards) reads. Jam Cards 1.0.0 has
+this one look built in: the cards draw Hi-Fi under any theme (without this theme, or under an old Jam theme, they draw the
+Night palette from their own values), and with **Hi-Fi** selected they follow its Day and Night palettes.
 
-It also defines the `--jam-*` palette used by [Jam Cards](https://github.com/Starkkaman/jam-cards): ground and slab
-colours, the accent hues below, and the series palette `--jam-s1`..`--jam-s5`, which the theme also hands to Home
-Assistant's history and statistics graphs (`graph-color-1`..`5`). `--jam-shadow` is still defined for older Jam Cards
-versions, but nothing in the theme draws a shadow any more. `--jam-slab3` (#35302a dark, #ddd1b3 light) is the
-third surface step: Jam Cards 0.3 use it for inner controls of cards that sit inside a pop-up sheet.
-Since the Jam Cards theming work (after 0.7.2) the theme also sets `jam-look: poster` (cards mark themselves with `data-look`) and the fixed ink
-colours the cards used to hard-code: `jam-ink-fg` / `jam-ink-dim` / `jam-ink-dim2` (text on ink), `jam-band*` (the ink
-bands of the TV / speaker cards, the music dock and the error strip) and `jam-plate` / `jam-plate-fg` (label plates),
-the same in both modes. Shape tokens (`jam-shape-*`, `jam-radius-*`) are left to other looks: unset means the JamBoard cuts.
-Type tokens (theme top level): `jam-display-weight` (900), `jam-display-case` (uppercase), `jam-display-scale` and
-`jam-display-lead` (factors, 1), `jam-label-weight` / `jam-key-weight` (600), `jam-label-case` / `jam-key-case`
-(uppercase), `jam-label-track-scale` / `jam-key-track-scale` (factors, 1). The optional `jam-display-track`, `jam-num-font`
-and `jam-num-scale` are left to other looks. Lines: `jam-rule-h` (5px accent rule under titles) and `jam-stripe-w` (6px
-left tone stripe); `jam-border` (face border) and `jam-art-1`..`8` (idle-art colours) are left to other looks. Motion: `jam-dur` (factor on
-every duration, 1), `jam-press-from` / `jam-press` (press transforms); `jam-ease-2/3/4` (timing) and `jam-kf-<name>`
-(keyframe names) are left to other looks.
+> Jam Cards 1.0.0 / this release replaced every earlier look. Until then this repo held the Poster theme **JamBoard**
+> (`themes/jamboard.yaml`) and the looks Jam Braun, Olympia, Transit, Grid, Pulsar, New Wave, Brutal, Glass, Girard and
+> Jam Calm (`themes/jamboard-<look>.yaml`). `themes/jamboard.yaml` keeps its name (HACS keeps installing the same file) and
+> now holds **Hi-Fi**; the other files are gone. After the update: run `frontend.reload_themes`, pick **Hi-Fi** in your
+> profile, and point the backend default at it (`frontend.set_theme` with `name: Hi-Fi`, once without and once with
+> `mode: dark`) if it was JamBoard. A theme name that no longer exists falls back to Home Assistant's default theme. Old
+> `jamboard-*.yaml` files that HACS left in `config/themes/` can be deleted; Jam Cards ignores their look either way.
 
-## Accent hues and room colours
-Each room has its own hue; red is reserved for alerts. `--jam-on-fg` (#141210 in both modes) is the text colour on
-filled accents: every fill hue carries ink text and reaches at least 4.5:1 against it in both modes.
+## Palette
 
-| Token | Dark (ink) | Light (paper) | Used for |
+| Role | Token | Day | Night |
 |---|---|---|---|
-| `--jam-ochre` | #e5a31b | #d99410 | Living room |
-| `--jam-teal` | #22a39a | #22a39a | Kitchen |
-| `--jam-blue` | #4a7be0 | #4a7be0 | Master bedroom |
-| `--jam-pink` | #e2658f | #d24f7c | Marissa |
-| `--jam-violet` | #9b6dd6 | #9b6dd6 | Music |
-| `--jam-green` | #86a83a | #6d8f22 | Nerd room |
-| `--jam-red` | #e0553b | #e0553b | Alerts only (fills: power keys, alert chips) |
-| `--jam-alert-text` | #ff8a6e | #a12a14 | Red text (bad values, "unavailable", "N/A"), >= 4.5:1 on slab/slab2/slab3 |
-| `--jam-on-fg` | #141210 | #141210 | Text on filled accents |
+| Page ground | `jam-ground` (HA `primary-background-color`) | #efebe2 | #10141d |
+| Panel (card face) | `jam-slab`, `jam-paper` | #f9f7f2 | #161c28 |
+| Key (control face) | `jam-slab2` | #f1ece2 | #1d2433 |
+| Pressed key | `jam-slab3` | #e3dbcb | #0a0e15 |
+| Ink (text) | `jam-fg` | #19202e | #ece5d3 |
+| Dim text | `jam-dim` | #5b606d | #a29d8f |
+| Hairline | `jam-line` | #d6cfbf | #2a3244 |
+| The one action | `jam-ochre` | #ec7c22 | #f08a2c |
+| Alert fill / text | `jam-red` / `jam-alert-text` | #ff5a48 / #b3261b | #ff5a48 / #ff8a7a |
+| Walnut (kiosk rule) | `jam-living` | #6b4428 | #6b4428 |
+| ok / warn | `jam-ok` / `jam-warn` | #7bd651 / #f2c14e | #7bd651 / #f2c14e |
 
-Home Assistant's named colours are mapped to the same hues, so tile and button cards that pick a colour by name match
-the palette: `blue` → blue, `pink` → pink, `purple` → violet, `green` → green, `teal`/`cyan` → teal,
-`amber`/`orange`/`yellow` → ochre, `red` → red.
+Small-switch accents by kind (Jam Design pass 7, option B; a card's `accent` overrides them): plugs / power
+`jam-switch-plug` (blue #6780b4 / #5971a4), air / climate `jam-switch-climate` (teal #43899a / #337b8c), automations
+`jam-switch-auto` (violet #8f72c0 / #8063b1), settings `jam-switch-set` (steel #71819c / #64738d). Graphs use `jam-s1`..`s5`
+(`graph-color-1`..`5`). The calm-instrument parts (fader groove and cap, indicator windows, the purifier's seven-segment
+readout and grille dots) have their own `jam-*` tokens; see the comments in `themes/jamboard.yaml`.
+
+Home Assistant's named colours map onto the same hues (`blue`, `teal` / `cyan`, `purple` → violet, `pink`, `green`,
+`orange` / `amber` / `yellow` → the orange, `red`).
 
 ## Fonts
-Home Assistant themes can only set variables; they cannot load web fonts. The theme sets the font stacks
-(`"Jost"` for text, `"Londrina Solid"` for display type), and **Jam Cards loads Londrina Solid + Jost** when its
-resource is installed. Without Jam Cards the stacks fall back to Helvetica/Arial and Arial Black/Impact.
+Home Assistant themes can only set variables; they cannot load web fonts. The theme sets the stacks (`"Jost"` for words,
+`"IBM Plex Mono"` for code), and **Jam Cards loads Jost and IBM Plex Mono** when its resource is installed (Jost 400-600
+inside the bundle, IBM Plex Mono and a Jost 300 face from its `dist/fonts/`, IBM's files unmodified, SIL OFL 1.1). Without
+Jam Cards the stacks fall back to Futura / Century Gothic / the system sans and the system monospace.
 
 ## What the theme styles in Home Assistant itself
-Square corners and no shadows on cards, sections, badges, dialogs (including more-info), tile icons and card
-features, pictures and menus; display font on card headers; ink/paper surfaces for dialogs, inputs and selects;
-switches, gauge severity (green/yellow/red become teal/ochre/red), named colours (see above), weather icons, graph series,
-sidebar and app header.
+Soft corners (16px cards and sections, 22px dialogs, 12px controls, 999px badges and pills), a 1px hairline on cards, no
+shadows; Jost on cards, headings and card headers; paper / navy surfaces for dialogs, inputs and selects; the house blue for
+HA's switches, sliders and primary; named colours, weather icons, graph series, sidebar and app header (#efebe2 / #10141d
+with a 1px hairline under the header).
 
 ## Dashboard view tabs (needs card-mod)
 With [card-mod](https://github.com/thomasloven/lovelace-card-mod) 4.x installed (HACS "lovelace-card-mod", loaded as a
-Lovelace resource), the theme restyles Home Assistant's own view tabs in the app header to match the Jam Tabs card:
-Londrina Solid uppercase labels, 48px tall tabs, a 4px bar in the room colour under each tab, the current tab filled
-with its room colour and ink text, flat with one 8px cut corner (top right). On the Jam Home dashboard (views
-`living`, `kitchen`, `master`, `marissa`, `music`) each tab takes its room hue; tabs on every other dashboard use ochre.
-Edit mode keeps Home Assistant's own tab bar. Without card-mod nothing changes.
-
-It works through two theme-level keys, shared by both modes: `card-mod-theme: "JamBoard"` and `card-mod-root` (CSS
-that card-mod puts into the dashboard root). To undo it, delete both `card-mod-*` keys and run `frontend.reload_themes`.
-The rules target Home Assistant 2026.10's tab markup (`ha-tab-group` / `ha-tab-group-tab[data-path]`); a later
-frontend release that renames those elements makes them stop matching, and the tabs fall back to Home Assistant's look.
-The Jam Home room hues use CSS `:has()` (Chrome/WebView 105+, Safari 15.4+, Firefox 121+); older browsers show
-ochre tabs.
-
-## Jam Olympia (second look)
-`themes/jamboard-olympia.yaml` adds the theme **Jam Olympia**, after Otl Aicher's Munich 1972 design: a light ground
-(#f4f6f7) with white faces and a 1px hairline (dark mode #10202b / #172b38), square corners, lowercase Albert Sans, and
-the Munich spectrum as flat fields and stripes (blue #3a8fd8, light blue #8fc7e8, green #2aa65c, yellow #f6c445, orange
-#f08c33, silver). There is no red: alerts are orange. The room hues map onto the spectrum (living orange, kitchen green,
-master blue, marissa light blue, music blue, nerd green); text on a filled hue is the deep navy #10202b. Home Assistant
-gets a white header and sidebar in light mode, a blue primary and 1px card borders. Jam Cards (with its `dist/fonts/`)
-draws the rest: top stripes, square power buttons, spectrum motifs. Pick **Jam Olympia** in your profile, or switch every
-browser on "Backend-selected" with `frontend.set_theme` (name `Jam Olympia`, and again with `mode: dark`).
-
-## Jam Transit
-`themes/jamboard-transit.yaml` adds the theme **Jam Transit**, after Massimo Vignelli and Unimark's New York City subway
-signage (1970) and map (1972): every Jam card is a black platform sign under a double rule (light mode: a white #ffffff
-page with black #000000 signs; dark mode: a black page with #111111 signs and a white rule), one Helvetica style sans
-(Arimo, mixed case), square corners and round route bullets in the MTA colours (living orange #ff6319, kitchen green
-#00933c, master blue #0039a6, marissa and music purple #b933ad, nerd lime #6cbe45). Alerts are the yellow
-"service change" (#fccc0a, a diamond + text), never a red fill. Home Assistant gets a black header and sidebar; its own
-cards are white panels with a hairline in light mode (one text colour has to read on HA's cards and on its page) and
-#111111 in dark mode; primary blue (light) / #00add0 (dark). With card-mod the view tabs are Arimo labels over a 4px route
-rule, the current one a white plate with black text. Jam Cards (with its `dist/fonts/`) draws the rest: the sign rules,
-route bullets with letters, round power bullets, the arrivals-board screensaver. Pick **Jam Transit** in your profile, or
-switch every browser on "Backend-selected" with `frontend.set_theme` (name `Jam Transit`, and again with `mode: dark`).
-
-## Jam Grid
-`themes/jamboard-grid.yaml` adds the theme **Jam Grid**, after Wim Crouwel's New Alphabet (1967) and his Stedelijk
-posters: a white page with a visible 1px grid every 24px (`lovelace-background`; dark mode: black with a #343434 grid),
-square faces with a 1px black line (white in dark), Hanken Grotesk in mixed case, and one orange-red signal (#e8401c /
-#ff4b26) for everything that is on, active or alerting; every room hue is that signal, text on it is black. A secondary
-blue (#1d3c9a / #6d8cf0) marks focus and selection. Home Assistant gets a white (black) header and sidebar with a 1px
-rule and 1px card borders. Jam Cards (with its `dist/fonts/`) draws the rest: big numbers built from grid cells,
-outlined square keys, brightness as a row of cells. Pick **Jam Grid** in your profile, or switch every browser on
-"Backend-selected" with `frontend.set_theme` (name `Jam Grid`, and again with `mode: dark`).
-
-## Jam New Wave
-`themes/jamboard-newwave.yaml` adds the theme **Jam New Wave**, after April Greiman's Design Quarterly #133 (1986) with a
-touch of Memphis: a lavender-white page (#fbf8ff; dark #140f2e) with white / indigo planes tinted by their room (pastel
-peach, mint, lavender, pink), ink #1b1640 text, a sticker yellow (#fff05a) for alerts, Archivo 700 headings and Silkscreen
-pixel numbers and labels, 2px corners. Home Assistant gets a light header with an ink rule, a violet primary and soft card
-shadows. Jam Cards (with its `dist/fonts/`) draws the rest: tinted planes, confetti, stickers, pixel bars. The theme sets
-`jam-fx: 1`, so the cards also get translucent gradient planes, a slight tilt, blur behind sheets and a drifting light on
-the screensaver; on a weak wall tablet set `fx: false` on the jam-kiosk and jam-screensaver cards (flat planes, no tilt).
-With card-mod the view tabs become Silkscreen pixel caps with a room-colour underline and an ink block for the current
-tab. Pick **Jam New Wave** in your profile, or switch every browser on "Backend-selected" with `frontend.set_theme`.
-
-## Jam Brutal
-`themes/jamboard-brutal.yaml` adds the theme **Jam Brutal**, neo-brutalism: a paper page (#fffbea; dark #191919) with
-white cards (#262626 in dark) that carry a 3px black border (#f5f5f5 in dark) and a hard `6px 6px 0` offset shadow, six
-flat saturated room fills with black text (yellow living, lime kitchen, cyan master, pink Marissa, violet music, orange
-nerd; red alerts), Bricolage Grotesque 800 for names and numbers, mixed case, 10px corners and 999px pills. Home
-Assistant gets a paper header and sidebar with a 3px black rule, a violet primary, and its own cards with the same
-border and hard shadow. Jam Cards (with its `dist/fonts/`) draws the rest: keys that go down when pressed, pill
-switches, lit lights filled with their nearest room colour, fat bordered bars. With card-mod the view tabs become
-bordered pills, the current one filled with its room colour. Pick **Jam Brutal** in your profile, or switch every
-browser on "Backend-selected" with `frontend.set_theme`.
-
-## Jam Glass
-`themes/jamboard-glass.yaml` adds the theme **Jam Glass**: liquid glass + bento. Dark mode first: a deep ink page
-(#0b1020) under a soft colour field (teal #1fb5a8, violet #7c5cff, amber #ffb44d, as `lovelace-background`), frosted
-panes (#182036 solid), text #f4f6fb; light mode is an #eef1f7 page with a pastel field, white panes and #0f1424 text.
-Figtree in mixed case (600 names, light 300 big numbers), rounded bento shapes (28px cards, 18px keys, pills), a violet
-primary and soft card shadows in Home Assistant. Jam Cards (with its `dist/fonts/`) draws the panes, the light glow
-(a lit light glows from inside in its own colour) and the thick rounded sliders. The theme sets `jam-fx: 1`, so the
-cards are frosted (backdrop blur) and the colour field is at full strength; on a weak wall tablet set `fx: false` on the
-jam-kiosk and jam-screensaver cards (solid panes, a dimmer static field). With card-mod the view tabs become pills with a
-frosted pill for the current tab. Pick **Jam Glass** in your profile, or switch every browser on "Backend-selected" with
-`frontend.set_theme`.
-
-## Jam Girard
-`themes/jamboard-girard.yaml` adds the theme **Jam Girard**, after Alexander Girard's textiles for Herman Miller and La
-Fonda del Sol (1950s-60s): a bright cream-white page (#fbf6ec; dark: ink #2a1a12) with white (dark brown) cards, saturated
-flat room colours (vermilion living, mustard kitchen, cobalt master, pink marissa, magenta music, turquoise nerd), ink text,
-Fraunces for names and numbers and Work Sans for the rest. Home Assistant gets a white header and sidebar over a 6px
-vermilion band, a cobalt primary (dark: mustard) and pill badges. Jam Cards (with its `dist/fonts/`) draws the rest: a
-woven pattern edge or frame on every card (one pattern per room), pill keys tinted with the room colour, the sun / heart /
-eye / bird / diamond motifs, a sun-shaped power key and a kiosk in the room's own colour. With card-mod the view tabs become Work Sans pills over a 6px room
-band, the current tab filled with its colour. Pick **Jam Girard** in your profile, or switch every browser on
-"Backend-selected" with `frontend.set_theme`.
-
-## Jam Calm
-`themes/jamboard-calm.yaml` adds the theme **Jam Calm**, the calm-instrument look of Jam Design pass 6 + 7: Callsheet paper
-by day (#efebe2 page, #f9f7f2 cards, navy ink #19202e) and navy by night (#10141d page, #161c28 cards, cream ink #ece5d3),
-hairline edges and soft corners (16px cards, 22px dialogs), no shadows, Jost for words and IBM Plex Mono for labels and
-numbers. Orange (#ec7c22 / #f08a2c) is kept for the one thing to do now; Home Assistant's own switches and sliders take the
-house blue (#6780b4 / #5971a4). With card-mod the view tabs are plain Jost text with an ink underline on the current one.
-Jam Cards (with its `dist/fonts/`) draws the Calm cards: the light rocker or small switch beside a vertical fader, the small
-channel-reveal switch on plugs, fans and automations (its accent by kind), the purifier, media cards, the round 5 remote
-and a minimal kiosk. Pick **Jam Calm** in your profile, or pin it on a view (`theme: Jam Calm`).
+Lovelace resource), the theme restyles Home Assistant's own view tabs in the app header: plain Jost 15px text in the dim
+colour, the current tab in ink with a 2px ink underline (the mockup's room tabs). Edit mode keeps Home Assistant's own tab
+bar; without card-mod nothing changes. It works through two theme-level keys shared by both modes,
+`card-mod-theme: "Hi-Fi"` and `card-mod-root` (CSS that card-mod puts into the dashboard root); to undo it, delete both keys
+and run `frontend.reload_themes`. The rules target Home Assistant 2026.10's tab markup (`ha-tab-group` /
+`ha-tab-group-tab[data-path]`); a later frontend release that renames those elements makes them stop matching, and the tabs
+fall back to Home Assistant's look.
 
 ## Generated file
 `themes/jamboard.yaml` is generated from the Jam Cards token source (`tokens/` in
-[jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/poster.mjs` for this theme and
-`tokens/ha.mjs` for the Home Assistant keys derived from the palette) by `node tools/themes.mjs` in jam-cards, with this
-repo cloned next to it. Do not edit the YAML by hand: change the token source and regenerate (`node tools/bundle.mjs
---check` in jam-cards fails while the YAML is stale). Further looks are written here as `themes/jamboard-<look>.yaml`:
-
-- `themes/jamboard-braun.yaml` = theme **Jam Braun** (from `tokens/looks/braun.mjs`): after Dieter Rams. Light mode warm
-  white (#e7e3da page, #f2efe8 panels, #262626 text), dark mode anthracite (#1c1c1a page, #2a2a27 panels); one orange
-  signal (#f07d1e / #f28a2e) as primary and accent of the cards; Archivo, mixed case; 14px radii, a hairline border and a
-  soft card shadow (`jam-elev-1`); `jam-look: braun` makes Jam Cards draw toggles, LED dots and the Braun motifs. No
-  card-mod view tab styling (HA's own tabs in the theme colours).
-- `themes/jamboard-olympia.yaml` = theme **Jam Olympia** (from `tokens/looks/olympia.mjs`); see "Jam Olympia" above.
-- `themes/jamboard-transit.yaml` = theme **Jam Transit** (from `tokens/looks/transit.mjs`); see "Jam Transit" above.
-- `themes/jamboard-grid.yaml` = theme **Jam Grid** (from `tokens/looks/grid.mjs`); see "Jam Grid" above.
-- `themes/jamboard-pulsar.yaml` = theme **Jam Pulsar** (from `tokens/looks/pulsar.mjs`): after Peter Saville / Factory
-  Records (Unknown Pleasures, Blue Monday). Dark mode (primary) is a black field with white text and 1px rules
-  (#3d3d3d), light mode cream #e7e2d2 with black text and black rules; one warm accent (#ffb070 dark, #c25f28 light,
-  black text on it) for "on" and "needs attention": every room hue and `jam-red` are the warm accent. Archivo 300 values,
-  wide-tracked uppercase labels, square corners, no shadows; `jam-look: pulsar` makes Jam Cards draw ridge lines instead
-  of level bars, the 12-colour name codes and the Pulsar screensaver. Graph colours (`jam-s1`..`s5`) come from the
-  12-colour wheel. With card-mod, the view tabs become tiny wide-tracked capitals with a 1px rule over the current one.
-- `themes/jamboard-newwave.yaml` = theme **Jam New Wave** (from `tokens/looks/newwave.mjs`); see "Jam New Wave" above.
-- `themes/jamboard-brutal.yaml` = theme **Jam Brutal** (from `tokens/looks/brutal.mjs`); see "Jam Brutal" above.
-- `themes/jamboard-glass.yaml` = theme **Jam Glass** (from `tokens/looks/glass.mjs`); see "Jam Glass" above.
-- `themes/jamboard-girard.yaml` = theme **Jam Girard** (from `tokens/looks/girard.mjs`); see "Jam Girard" above.
+[jam-cards](https://github.com/Starkkaman/jam-cards): the token registry, `tokens/looks/hifi.mjs` for this theme and
+`tokens/ha.mjs` for the Home Assistant keys derived from the palette) by `node tools/themes.mjs` in jam-cards, with this repo
+cloned next to it (`JAM_THEME_DIR=<dir>` writes into another checkout's `themes/`). Do not edit the YAML by hand: change the
+token source and regenerate (`node tools/bundle.mjs --check` in jam-cards fails while the YAML is stale).
 
 ## Install
-HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the
-`frontend.reload_themes` action and pick **JamBoard** in your profile (or set it as the default theme).
+HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the `frontend.reload_themes`
+action and pick **Hi-Fi** in your profile (or set it as the default theme with `frontend.set_theme`, `name: Hi-Fi`, once
+for light and once with `mode: dark`).
