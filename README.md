@@ -18,6 +18,18 @@ Night palette from their own values), and with **Hi-Fi** selected they follow it
 > `mode: dark`) if it was JamBoard. A theme name that no longer exists falls back to Home Assistant's default theme. Old
 > `jamboard-*.yaml` files that HACS left in `config/themes/` can be deleted; Jam Cards ignores their look either way.
 
+## Hi-Fi Day and Hi-Fi Night (kiosks that follow the sun)
+`themes/jamboard.yaml` also holds **Hi-Fi Day** and **Hi-Fi Night** (with Jam Cards 1.0.1): the same palettes as Hi-Fi's
+light and dark modes, each as one flat theme with no modes, generated from the same tokens. Set one as the backend default
+theme at sunrise and the other at sunset, and every device on the default theme (the kiosks) switches with the sun whatever
+its own dark setting; whoever picks **Hi-Fi** in their profile keeps following their own device. For example, an
+automation with a sunrise trigger runs `frontend.set_theme` with `name: Hi-Fi Day` twice (once with `mode: light`, once
+with `mode: dark`), and one with a sunset trigger does the same with `name: Hi-Fi Night`.
+Every palette carries `jam-mode: day` or `night`; Jam Cards (1.0.1) decides day or night from it, never from Home
+Assistant's dark-mode flag, so "Hi-Fi Day" draws Day everywhere on a device in dark mode, pop-ups and the screensaver
+included. Home Assistant's own UI takes the theme's colours as well; with a single-mode theme it may still apply its own
+dark-mode defaults to anything the theme leaves unset.
+
 ## Palette
 
 | Role | Token | Day | Night |
@@ -60,7 +72,7 @@ With [card-mod](https://github.com/thomasloven/lovelace-card-mod) 4.x installed 
 Lovelace resource), the theme restyles Home Assistant's own view tabs in the app header: plain Jost 15px text in the dim
 colour, the current tab in ink with a 2px ink underline (the mockup's room tabs). Edit mode keeps Home Assistant's own tab
 bar; without card-mod nothing changes. It works through two theme-level keys shared by both modes,
-`card-mod-theme: "Hi-Fi"` and `card-mod-root` (CSS that card-mod puts into the dashboard root); to undo it, delete both keys
+`card-mod-theme: "Hi-Fi"` (`"Hi-Fi Day"` / `"Hi-Fi Night"` in the single-mode themes) and `card-mod-root` (CSS that card-mod puts into the dashboard root); to undo it, delete both keys
 and run `frontend.reload_themes`. The rules target Home Assistant 2026.10's tab markup (`ha-tab-group` /
 `ha-tab-group-tab[data-path]`); a later frontend release that renames those elements makes them stop matching, and the tabs
 fall back to Home Assistant's look.
@@ -75,4 +87,4 @@ token source and regenerate (`node tools/bundle.mjs --check` in jam-cards fails 
 ## Install
 HACS → Custom repositories → `Starkkaman/jam-theme`, category **Theme** → Download, then run the `frontend.reload_themes`
 action and pick **Hi-Fi** in your profile (or set it as the default theme with `frontend.set_theme`, `name: Hi-Fi`, once
-for light and once with `mode: dark`).
+for light and once with `mode: dark`). For kiosks that follow the sun, use **Hi-Fi Day** / **Hi-Fi Night** (above).
